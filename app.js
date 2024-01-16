@@ -7,6 +7,7 @@ let direction = 1;
 
 const eathing = new Audio('/eating-sound-effect-36186.mp3');
 const death = new Audio('/videogame-death-sound-43894.mp3');
+const aleteo = new Audio('/giant-wings-flappingmp3-14881.mp3');
 
 function start(){
 
@@ -32,7 +33,7 @@ snake.push({
     yNext: 1,
     pinta: function(){
         ctx.font = '25px Serif';
-        ctx.fillText('⭕', this.x * 20, this.y * 20);
+        ctx.fillText('🧡', this.x * 20, this.y * 20);
     }
 });
 snake.push({
@@ -42,7 +43,7 @@ snake.push({
     yNext: 1,
     pinta: function(){
         ctx.font = '25px Serif';
-        ctx.fillText('⭕', this.x * 20, this.y * 20);
+        ctx.fillText('🧡', this.x * 20, this.y * 20);
     }
 })
 return snake;
@@ -59,12 +60,13 @@ const comida = {
     },
     pinta: function(){
     ctx.font = '25px Serif';
-    ctx.fillText('🍔', this.x * 20, this.y * 20);
+    ctx.fillText('🌺', this.x * 20, this.y * 20);
 }
 }
 function nextMove(){
     snake.forEach((bolita, index) => {
         if(index === 0){
+            aleteo.play();
             bolita.x = posX;
             bolita.y = posY;
         }else{
